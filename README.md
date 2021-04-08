@@ -7,3 +7,4 @@ Update:
     3. Patient and Doctor API created
     4. Link up with MongoDB Atlas
     5. Mock Doctor profiles with Mockaroo 
+    6. update test
