@@ -1,13 +1,16 @@
-on: [push]
+on: 
+  push:
+    branches:
+      - main
 
 # Environment variables available to all jobs and steps in this workflow
 env:
-  REGISTRY_NAME: {registry-name}
-  CLUSTER_NAME: {cluster-name}
-  CLUSTER_RESOURCE_GROUP: {resource-group-name}
-  NAMESPACE: {namespace-name}
-  SECRET: {secret-name}
-  APP_NAME: {app-name}
+  REGISTRY_NAME: aptregistry
+  CLUSTER_NAME: myAKSCluster
+  CLUSTER_RESOURCE_GROUP: myResourceGroup
+  NAMESPACE: default
+  SECRET: acr-secret
+  
   
 jobs:
   build:
@@ -24,8 +27,8 @@ jobs:
     
     # Container build and push to a Azure Container registry (ACR)
     - run: |
-        docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
-        docker push ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
+        docker build . -t ${{ env.REGISTRY_NAME }}.azurecr.io/flexidoctor:${{ github.sha }}
+        docker push ${{ env.REGISTRY_NAME }}.azurecr.io/flexidoctor:${{ github.sha }}
     
     # Set the target Azure Kubernetes Service (AKS) cluster. 
     - uses: azure/aks-set-context@v1
