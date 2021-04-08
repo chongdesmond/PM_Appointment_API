@@ -2,14 +2,14 @@
 FROM tiangolo/uwsgi-nginx-flask:python3.6
 
 # Set the working directory to /app
-WORKDIR /Appointment
+WORKDIR /app
 
 # Copy server configurations
 COPY nginx.conf .
 COPY uwsgi.ini .
 
 # Copy requirements.txt first to utilise cache
-COPY ./Appointment/requirements.txt .
+COPY ./app/requirements.txt .
 
 # Install the dependencies
 #RUN pip install --upgrade certifi
@@ -21,4 +21,4 @@ RUN pip install -r requirements.txt
 
 
 # Copy the current directory contents into the container at /app
-COPY ./Appointment .
+COPY ./app .
