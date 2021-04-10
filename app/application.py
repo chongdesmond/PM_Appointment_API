@@ -7,7 +7,7 @@ import calendar
 app = Flask(__name__)
 
 print("A")
-DB_URI = "mongodb+srv://dbuser:desmond63@cluster1.j2rmu.mongodb.net/APPOINTMENT?retryWrites=true&w=majority"
+DB_URI = "mongodb+srv://dbuser:desmond63@cluster1.j2rmu.mongodb.net/APPOINTMENT?retryWrites=true&w=majority&authSource=admin"
 app.config["MONGODB_HOST"] = DB_URI
 
 db = MongoEngine()
