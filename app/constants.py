@@ -1,4 +1,4 @@
-mongodb_uri="mongodb+srv://Desmond:{}@cluster0.j2rmu.mongodb.net/{}?retryWrites=true&w=majority"
+mongodb_uri="mongodb+srv://msazili:{}@cluster0.on4rc.mongodb.net/{}?retryWrites=true&w=majority&authSource=admin"
 mongodb_name="APPOINTMENT"
-mongodb_password="Desmond63"
+mongodb_password="msazili"
 datetime_format="%Y-%m-%d %H:%M:%S.%f"
