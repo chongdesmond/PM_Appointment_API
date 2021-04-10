@@ -6,6 +6,7 @@ import calendar
 
 app = Flask(__name__)
 
+print("A")
 DB_URI = mongodb_uri.format(mongodb_password, mongodb_name)
 app.config["MONGODB_HOST"] = DB_URI
 
@@ -166,7 +167,7 @@ def getDoctorRanking():
     date= input_map.get("PreferredDate")
     time= input_map.get("PreferredTime")
     #datetime_object = datetime.strptime(available_time, '%m/%d/%Y')
-    
+    print ("A")
     #calculate the weekday for particular date
     def findDay(date): 
         week1 = datetime.datetime.strptime(date, '%m/%d/%Y').weekday() 
