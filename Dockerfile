@@ -1,5 +1,5 @@
 #Use the Python3.6 image
-FROM tiangolo/uwsgi-nginx-flask:python3.6
+FROM tiangolo/uwsgi-nginx-flask:python3.7
 
 # Set the working directory to /app
 WORKDIR /app
